@@ -1,0 +1,14 @@
+name: Tieraid tenant sync workflow
+
+on:
+  workflow_dispatch:
+
+  repository_dispatch:
+    types: [sync]
+
+jobs:
+  sync:
+    uses: tieraid-app/.github/.github/workflows/sync.yml@main
+    with:
+      backend-url: https://yourrad.tieraid.be
+    secrets: inherit
